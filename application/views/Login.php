@@ -55,13 +55,13 @@ session_destroy();
                                                 Remember me
                                             </label>
                                         </div>
-                                        <a class="text-info fw-bold" href="register.php">Forgot Password ?</a>
+                                        <!-- <a class="text-info fw-bold" href="register.php">Forgot Password ?</a> -->
                                     </div>
                                     <button class="btn btn-info w-100 py-8 fs-4 mb-4 rounded-2" type="submit">Log in</button>
-                                    <div class="d-flex  justify-content-between">
+                                    <!-- <div class="d-flex  justify-content-between">
                                         <p class="fs-3 mb-0 fw-bold">i don't have an Account?</p>
                                         <a class="text-info fw-bold ms-2" href="register.php">Create an account</a>
-                                    </div>
+                                    </div> -->
                                 </form>
                             </div>
                         </div>

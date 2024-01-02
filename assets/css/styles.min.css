@@ -16402,7 +16402,7 @@ fieldset:disabled .btn {
   position: absolute;
   -webkit-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
-  min-height: 100vh;
+  min-height: 157vh; /*NB*/
   z-index: 11;
   border-right: 1px solid rgb(229, 234, 239);
 }

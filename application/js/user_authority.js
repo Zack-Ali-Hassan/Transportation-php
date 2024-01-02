@@ -69,7 +69,7 @@ function loadData() {
                 </fitemeldset>
                 </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                 <fieldset class="border border-3 border-dark rounded-3 p-3">
                     <legend class="float-none w-auto px-3 text-dark fw-bold">
                         <input type="checkbox" id="role_authority[]" name="role_authority[]" class="me-3"
@@ -145,42 +145,7 @@ function fillUser() {
     },
   });
 }
-function loadUserPermissions(id) {
-  let send_data = {
-    action: "get_system_authority_sp",
-    user_id: id,
-  };
-  $.ajax({
-    method: "POST",
-    dataType: "JSON",
-    url: "../api/user_authority_api.php",
-    data: send_data,
-    success: function (data) {
-      let status = data.status;
-      let response = data.message;
-      if (status) {
-        if (response.length >= 1) {
-          response.forEach((user) => {
-            $(
-              `input[type = 'checkbox'][name = 'role_authority[]'][value = '${user["role"]}']`
-            ).prop("checked", true);
-            $(
-              `input[type = 'checkbox'][name = 'system_links[]'][value = '${user["link_id"]}']`
-            ).prop("checked", true);
-            // $(`input[type = 'checkbox'][name = 'system_actions[]'][value = '${user['action_id']}']`).prop('checked', true);
-          });
-        } else {
-          $("input[type = 'checkbox']").prop("checked", false);
-        }
-      } else {
-        alert(response);
-      }
-    },
-    error: function (data) {
-      alert(data.responseText);
-    },
-  });
-}
+
 
 $("#form_user_authority").on("submit", function (event) {
   event.preventDefault();
@@ -240,3 +205,39 @@ $("#form_user_authority").on("submit", function (event) {
     });
   }
 });
+function loadUserPermissions(id) {
+  let send_data = {
+    action: "get_system_authority_sp",
+    user_id: id,
+  };
+  $.ajax({
+    method: "POST",
+    dataType: "JSON",
+    url: "../api/user_authority_api.php",
+    data: send_data,
+    success: function (data) {
+      let status = data.status;
+      let response = data.message;
+      if (status) {
+        if (response.length >= 1) {
+          response.forEach((user) => {
+            $(
+              `input[type = 'checkbox'][name = 'role_authority[]'][value = '${user["role"]}']`
+            ).prop("checked", true);
+            $(
+              `input[type = 'checkbox'][name = 'system_links[]'][value = '${user["link_id"]}']`
+            ).prop("checked", true);
+            // $(`input[type = 'checkbox'][name = 'system_actions[]'][value = '${user['action_id']}']`).prop('checked', true);
+          });
+        } else {
+          $("input[type = 'checkbox']").prop("checked", false);
+        }
+      } else {
+        alert(response);
+      }
+    },
+    error: function (data) {
+      alert(data.responseText);
+    },
+  });
+}
