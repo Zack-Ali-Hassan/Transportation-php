@@ -2,7 +2,8 @@
 session_start();
 session_unset();
 session_destroy();
-
+// include_once "../api/auth_link.php";
+// auth_link($_SESSION['user_id']);
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,7 +11,7 @@ session_destroy();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modernize Free</title>
+    <title>Al-Hilaal Transportation</title>
     <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/styles.min.css" />

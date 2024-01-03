@@ -1,7 +1,8 @@
 <?php
 include_once "../includes/sessions.php";
+include_once "../api/auth_link.php";
+auth_link($_SESSION['user_id']);
 include_once "../includes/sidebar.php";
-
 include_once "../includes/header.php";
 
 ?>

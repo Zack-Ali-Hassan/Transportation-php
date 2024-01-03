@@ -14,7 +14,7 @@ function login($conn)
         $data[] = $row;
         if(isset($row['Msg'])){
             if($row['Msg'] == 'Deny'){
-                $message = array("status" => false, "message" => "Username or password are valid....");
+                $message = array("status" => false, "message" => "Username or password are invalid....");
             }
             
             else{

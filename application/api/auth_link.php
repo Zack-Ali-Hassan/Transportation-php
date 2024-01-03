@@ -8,16 +8,21 @@ function auth_link($user_id){
             ON user_authority.action=system_links.link_id
             WHERE user_authority.user_id='$user_id'";
             $result =  $conn->query($query);
-            $row =  $result->fetch_Assoc();
-            
             $filename = basename($_SERVER['PHP_SELF']);
-            foreach($row as $r){
-                if($r != $filename){
-                    json_encode("File not authorized");
-                   
-                }
-                echo json_encode($r);
-            }
-        }
-auth_link('hl001')
+            $authorized = false;
+           while( $row =  $result->fetch_Assoc())
+                 {
+                        if (in_array($filename, explode(",", $row['link']))) {
+                            $authorized = true;
+                            break;
+                        }
+                    }
+                
+                    if (!$authorized) {
+                        header("Location: ../views/un_auth_file.php");
+                        exit();
+                    } 
+
+                 }
+        
 ?>
