@@ -26,7 +26,7 @@ function loadUserMenu() {
          
           <li class="nav-small-cap">
           <i class=""></i>
-          <span class="hide-menu "> ${menu['category_name']}</span>
+          <span class="hide-menu "> ${menu["category_name"]}</span>
         </li>
         
 
@@ -34,17 +34,18 @@ function loadUserMenu() {
             `;
             category = menu["category_name"];
           }
-          menuElement +=`
+          if (menu["link_name"] != "User Profile") {
+            menuElement += `
           
-          <li class="sidebar-item">
-          <a class="sidebar-link" href="${menu['link']}" aria-expanded="false">
-            <span>
-              <i class="${menu['link_icon']}"></i>
-            </span>
-            <span class="hide-menu  mx-2">${menu['link_name']}</span>
-          </a>
-        </li>
-          `;
+            <li class="sidebar-item">
+            <a class="sidebar-link" href="${menu["link"]}" aria-expanded="false">
+              <span>
+                <i class="${menu["link_icon"]}"></i>
+              </span>
+              <span class="hide-menu  mx-2">${menu["link_name"]}</span>
+            </a>
+          </li>`;
+          }
         });
         $("#user_menu").append(menuElement);
       } else {

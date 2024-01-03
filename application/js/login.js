@@ -26,7 +26,8 @@ $("#login_form").on("submit", function(e){
           if (status) {
             // console.log("response is : " + response);
             displayAlert("success",response)
-            window.location.href = "../views/index.php";
+              window.location.href = "../views/index.php";
+          
             // response.forEach((item) => {
             
             // });

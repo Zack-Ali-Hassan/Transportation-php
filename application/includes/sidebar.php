@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Transportation System</title>
+  <title>Al-Hilaal Transportation System</title>
   <!-- <link rel="shortcut icon" type="image/png" href="../../assets/images/logos/fav.png" /> -->
   <!-- Include Font Awesome library -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
